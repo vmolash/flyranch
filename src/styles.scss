@@ -1,0 +1,13 @@
+$body-color: #686765;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.55;
+    p {
+      color: $body-color;  
+    }
+    
+}
+img {
+    max-width: 100%;
+    height: auto;
+}

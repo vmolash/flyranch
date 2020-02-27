@@ -1,0 +1,9 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.55; }
+  body p {
+    color: #686765; }
+
+img {
+  max-width: 100%;
+  height: auto; }

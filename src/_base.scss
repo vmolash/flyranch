@@ -11,7 +11,11 @@ h1, h2, h3 {
 img {
     max-width: 100%;
     height: auto;
+    border: solid 1px red;
 }
 a {
     text-decoration: none;
-} 
+}
+aside {
+    @include linx($aside-color,$text-color,$link-active);
+}

@@ -1,9 +1,6 @@
-@mixin linx ($link, $visit, $hover, $active) {
+@mixin linx ($link, $hover, $active) {
     a {
       color: $link;
-      &:visited {
-        color: $visit;
-      }
       &:hover {
         color: $hover;   
       }

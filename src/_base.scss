@@ -1,0 +1,14 @@
+body {
+    font-family: $font-body;
+    line-height: 1.55;
+    p {
+      color: $text-color;  
+    }
+}
+h1, h2, h3 {
+    color: $heading-color;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}

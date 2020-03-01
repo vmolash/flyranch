@@ -2,6 +2,6 @@ nav {
     background-color: $nav-background;
     li {
         list-style-type: circle;
-        @include linx($nav-color, $heading-color, $link-active);  
+        @include linx($nav-color, $heading-color, $red);  
     }
 }

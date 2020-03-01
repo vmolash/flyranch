@@ -17,5 +17,29 @@ a {
     text-decoration: none;
 }
 aside {
-    @include linx($aside-color,$text-color,$link-active);
+    @include linx($aside-color,$text-color,$red);
+}
+%btn {
+    display: inline-block;
+    padding: 6px 12px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    font-family: $font-body;
+    user-select: none;
+    color: $body-background;
+}
+$color-btns: (
+    difference: $green,
+    involved: $red,
+    participate: $darkblue
+);
+@each $name, $value in $color-btns {
+    .btn-#{$name} {
+        @extend %btn;
+        background-color: $value;
+    }
 }

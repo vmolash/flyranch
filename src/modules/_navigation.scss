@@ -42,3 +42,40 @@ nav {
         }
     }
 }
+header {
+    nav {
+        height: 0;
+        overflow: hidden;
+        @include break(500px) {
+            height: 100%;
+            overflow: visible;
+        }
+    }
+    input[type=checkbox] {
+        position: absolute;
+        top: -999em;
+        left: -999em;
+    }
+    label {
+        display: block;
+        background: url(../images/hamburger-menu.png)no-repeat right center;
+        text-indent: -999em;
+        height: 44px;
+        cursor: pointer;
+        
+        -webkit-user-select: none; /*Chrome all / Safari all */
+        -moz-user-select: none; /*Firefox all */
+        -ms-user-select: none; /* IE 10+ */
+        user-select: none;
+        position: relative;
+        top: 2px;
+        right: 8px;
+        @include break(500px) {
+            display: none;
+        }
+    }
+    input[type=checkbox]:checked ~ nav {
+        height: auto;
+        overflow: hidden;
+    }
+} 

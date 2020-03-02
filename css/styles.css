@@ -1,3 +1,4 @@
+/*! made by Volha Molash */
 @import url("https://fonts.googleapis.com/css?family=Courgette|Kaushan+Script&display=swap");
 * {
   margin: 0;
@@ -191,4 +192,51 @@ nav ul li a {
   nav ul li a.logo {
     padding: 0;
   }
+}
+
+header nav {
+  height: 0;
+  overflow: hidden;
+}
+
+@media (min-width: 500px) {
+  header nav {
+    height: 100%;
+    overflow: visible;
+  }
+}
+
+header input[type=checkbox] {
+  position: absolute;
+  top: -999em;
+  left: -999em;
+}
+
+header label {
+  display: block;
+  background: url(../images/hamburger-menu.png) no-repeat right center;
+  text-indent: -999em;
+  height: 44px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  /*Chrome all / Safari all */
+  -moz-user-select: none;
+  /*Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+  position: relative;
+  top: 2px;
+  right: 8px;
+}
+
+@media (min-width: 500px) {
+  header label {
+    display: none;
+  }
+}
+
+header input[type=checkbox]:checked ~ nav {
+  height: auto;
+  overflow: hidden;
 }

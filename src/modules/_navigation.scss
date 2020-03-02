@@ -1,12 +1,11 @@
 nav {
     ul{
-        @include break(0, 499px) {
+        @include break(0, 630px) {
             .logo {
                 display: none;
             }
         }
         li {
-            list-style-type: none;
             @include linx($nav-color, $heading-color, $red);
             &:hover {
                 background-color: $background-hover;
@@ -55,6 +54,10 @@ header {
         position: absolute;
         top: -999em;
         left: -999em;
+        &:checked ~ nav {
+            height: auto;
+            overflow: hidden;
+        }
     }
     label {
         display: block;
@@ -73,9 +76,5 @@ header {
         @include break(500px) {
             display: none;
         }
-    }
-    input[type=checkbox]:checked ~ nav {
-        height: auto;
-        overflow: hidden;
     }
 } 

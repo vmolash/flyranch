@@ -16,11 +16,22 @@
 header, footer {
     background-color: $nav-background;
 }
+footer {
+    text-align: center;
+}
 p {
     color: $text-color;
 
     footer & {
         color: $nav-color;
+        padding: 10px;
+    }
+}
+li {
+    list-style-type: none;
+    section &::before {
+        content: '✓';
+        padding: 10px;
     }
 }
 %h {
@@ -95,12 +106,13 @@ $color-btns: (
     padding-top: 25px;
     height: 0;
     overflow: hidden;
-}
-.video iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 }
 /*        end CODE for video           */

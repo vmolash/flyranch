@@ -8,28 +8,33 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-   <div class="container">
+   
     <header>
-        <input type="checkbox" id="toggle">
-        <label for="toggle">Menu</label>
-        <nav>
-            <ul>
-                <li><a href="#" class="logo"><img src="images/logo.png" alt="Fly Ranch"></a></li>
-                <li><a href="#">Home</a></li>
-                <li><a href="pages/art.html">Art</a></li>
-                <li><a href="pages/purpose.html">Purpose</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+                <input type="checkbox" id="toggle">
+                <label for="toggle">Menu</label>
+                <nav>
+                    <ul>
+                        <li><a href="#" class="logo"><img src="images/logo.png" alt="Fly Ranch"></a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="pages/art.html">Art</a></li>
+                        <li><a href="pages/purpose.html">Purpose</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+        </div>
     </header>
-    <main>
+    <main class="container">
         <section>
             <h1>What is Fly Ranch?</h1>
             <p>Fly Ranch is a roughly 3,800-acre parcel of land located 21 miles north of Gerlach, Nevada. The property has 640 acres of wetlands, dozens of natural spring-water pools ranging in temperature from hot to cold, sagebrush-grasslands, and a small area of playa that opens onto the Hualapai Flat. The land’s most prominent feature is the stunning Fly Geyser, a unique and iconic geothermal geyser that constantly releases water reaching five feet in the air, depositing minerals and multi-colored algae on the terraces surrounding it. The Fly Ranch property is truly an oasis in the desert.</p>
         
             <p>The geyser itself is not entirely naturally occurring. It’s the result of some drilling done in 1964 in search of sources of geothermal energy. The well was likely not capped properly, which created the geyser. And why is it called “Fly” Ranch? Is there a bug problem? No. It’s believed the name in reference to flight. Accordingly to local Gerlachian lore, in the 1930s there was a biplane training facility on the property.</p>
-            <img src="images/fly-geyser.jpg" alt="fly-geyser">
+            <figure>
+               <img src="images/fly-geyser.jpg" alt="fly-geyser">
+               <figcaption>Fly geyser</figcaption>
+            </figure>
         
             <h2>What will Burning Man do with Fly Ranch?</h2>
             <button class="btn-difference">Make a difference</button>
@@ -44,8 +49,8 @@
     
         <aside>
             <h2>Global Network</h2>
+            <p> News and information from around Burning Man’s growing global network.</p>
             <ul>
-                <p> News and information from around Burning Man’s growing global network.</p>
                 <li><a href="#">Affiliated Organizations</a></li>
                 <li><a href="#">Burners Without Borders</a></li>
                 <li><a href="#">Fly Ranch</a></li>
@@ -55,7 +60,10 @@
             </ul>
         </aside>
     </main>
-    <footer><p>Copyright&copy; - 2020</p></footer>
-   </div>
+   <footer>
+       <div class="container">
+            <p>Copyright&copy; - 2020</p>
+       </div>
+    </footer>
 </body>
 </html>

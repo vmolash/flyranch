@@ -5,6 +5,7 @@
     font-size: 10px;
 }
 .container {
+    box-shadow: 0px 3px 8px 3px $shadow;
     font-family: $font-body;
     margin: 0 auto;
     max-width: 960px;
@@ -21,22 +22,38 @@ footer {
 }
 p {
     color: $text-color;
-
+    padding-bottom: nth($pd, 3);
     footer & {
         color: $nav-color;
-        padding: 10px;
+        padding: nth($pd, 2); // using list nth($list, $n) function
     }
 }
-li {
+ul {
+   margin: nth($pd, 3); 
+   &.facts {
+       margin: 0;
+   }
+   li {
     list-style-type: none;
+    margin: nth($pd, 1);
     section &::before {
         content: '✓';
-        padding: 10px;
+        padding: nth($pd, 2);
+        }
+    }
+}
+.facts li {
+    border-radius: 10px;
+    padding: nth($pd, 2);
+    &:hover {
+        background-color: $list-hover;
     }
 }
 %h {
     color: $heading-color;
     font-family: $font-headings;
+    padding-top: nth($pd, 3);
+    margin-left: nth($pd, 3)+5;
 }
 @each $key, $value in $size-headings {
     #{$key} {
@@ -48,11 +65,27 @@ img {
     max-width: 100%;
     height: auto;
 }
+figure {
+    margin: 15px 0;
+    @include break(650px) {
+        margin-right: -2%;
+    }
+    &.art {
+        margin-top: 0;
+    }
+    figcaption {
+        padding: 0 15px;
+        text-align: center;
+        @include break (650px) {
+            text-align: right;
+        }
+    }
+}
 a {
     text-decoration: none;
 }
 aside {
-    @include linx($aside-color,$text-color,$red);
+    @include linx($aside-color,lighten($green, 15%),$red);
 }
 main {
     padding: 0 2%;
@@ -62,9 +95,9 @@ main {
         grid-template-columns: 600/960*100% 100-(600/960*100%); /* math operators */
         
         aside {
-            background-color: #ededed;
-            background: linear-gradient(180deg, #ededed 0%, #fff 70%);
-            padding-left: 20px;
+            background-color: $background-aside;
+            background: linear-gradient(180deg, $background-aside 0%, $nav-color 70%);
+            padding-left: nth($pd, 4);
 
             h2, h3 {
                 color: lighten($heading-color, 12%); /* color function */
@@ -83,7 +116,7 @@ main {
     vertical-align: middle;
     cursor: pointer;
     border: none;
-    border-radius: 4px;
+    border-radius: 12px;
     font-family: $font-body;
     user-select: none;
     color: $body-background;

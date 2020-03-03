@@ -6,9 +6,10 @@ nav {
             }
         }
         li {
+            border-radius: 5px;
             @include linx($nav-color, $heading-color, $red);
             &:hover {
-                background-color: $background-hover;
+                background-color: lighten($background-hover, 4%);
 
                 &:first-of-type {
                     background-color: transparent;

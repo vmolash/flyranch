@@ -43,6 +43,7 @@ nav {
     }
 }
 header {
+    @extend %bar;
     nav {
         height: 0;
         overflow: hidden;

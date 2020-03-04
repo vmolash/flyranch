@@ -1,4 +1,4 @@
-@mixin linx ($link, $hover, $active) {
+@mixin linx ($link, $hover, $active) { /* custom mixin */
     a {
       color: $link;
       &:hover {

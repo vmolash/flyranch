@@ -9,18 +9,23 @@
 }
 
 .container {
-  box-shadow: 0px 3px 8px 3px #ddd;
   font-family: Verdana, sans-serif;
   margin: 0 auto;
   max-width: 960px;
   line-height: 1.55;
 }
 
-.container a, .container li, .container p {
+.container p, .container ul li, ul .container li, .container a {
   font-size: 1.4rem;
 }
 
-header, footer {
+@media (min-width: 800px) {
+  .container {
+    box-shadow: 0px 3px 8px 3px #ddd;
+  }
+}
+
+footer, header {
   background-color: #369;
 }
 
@@ -90,16 +95,11 @@ h3 {
 img {
   max-width: 100%;
   height: auto;
+  border-radius: 10px;
 }
 
 figure {
   margin: 15px 0;
-}
-
-@media (min-width: 650px) {
-  figure {
-    margin-right: -2%;
-  }
 }
 
 figure.art {
@@ -121,20 +121,24 @@ a {
   text-decoration: none;
 }
 
-aside a {
+main {
+  padding: 0 2%;
+}
+
+main aside {
+  /* custom mixin */
+}
+
+main aside a {
   color: #625d53;
 }
 
-aside a:hover {
+main aside a:hover {
   color: #00b100;
 }
 
-aside a:active {
+main aside a:active {
   color: darkred;
-}
-
-main {
-  padding: 0 2%;
 }
 
 @media (min-width: 650px) {
@@ -145,23 +149,28 @@ main {
     grid-template-columns: 62.5% 37.5%;
     /* math operators */
   }
+  main section {
+    padding-right: 3.45%;
+  }
   main aside {
     background-color: #ededed;
-    background: linear-gradient(180deg, #ededed 0%, #fff 70%);
+    background: linear-gradient(90deg, #ededed 0%, #fff 70%);
     padding-left: 15px;
+    padding-right: 5.5%;
   }
   main aside h2, main aside h3 {
     color: #3d769f;
     /* color function */
   }
-  main section {
-    padding-right: 2%;
+  main aside p {
+    padding-left: 17px;
   }
 }
 
 .btn-difference, .btn-involved, .btn-participate {
   display: inline-block;
   padding: 6px 12px;
+  margin: 5px;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
@@ -178,7 +187,8 @@ main {
 }
 
 .btn-difference:hover {
-  background-color: rgba(0, 100, 0, 0.7);
+  background-color: rgba(0, 100, 0, 0.75);
+  /* Color modifier */
 }
 
 .btn-involved {
@@ -186,7 +196,8 @@ main {
 }
 
 .btn-involved:hover {
-  background-color: rgba(139, 0, 0, 0.7);
+  background-color: rgba(139, 0, 0, 0.75);
+  /* Color modifier */
 }
 
 .btn-participate {
@@ -194,16 +205,20 @@ main {
 }
 
 .btn-participate:hover {
-  background-color: rgba(26, 100, 168, 0.7);
+  background-color: rgba(26, 100, 168, 0.75);
+  /* Color modifier */
 }
 
 /*        CODE for responsive video    */
 .video {
+  margin-bottom: 20px;
   position: relative;
   padding-bottom: 56.25%;
+  /* math operator */
   padding-top: 25px;
   height: 0;
   overflow: hidden;
+  border-radius: 10px;
 }
 
 .video iframe {
@@ -223,6 +238,7 @@ main {
 
 nav ul li {
   border-radius: 5px;
+  /* custom mixin */
 }
 
 nav ul li a {

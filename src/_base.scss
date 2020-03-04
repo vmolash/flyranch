@@ -29,10 +29,7 @@ p {
     }
 }
 ul {
-   margin: nth($pd, 3); 
-   &.facts {
-       margin: 0;
-   }
+   margin: nth($pd, 3);
    li {
     list-style-type: none;
     margin: nth($pd, 1);
@@ -41,13 +38,16 @@ ul {
         padding: nth($pd, 2);
         }
     }
-}
-.facts li {
-    border-radius: 10px;
-    padding: nth($pd, 2);
-    &:hover {
-        background-color: $list-hover;
+   &.facts {
+       margin: 0;
+        li {
+        border-radius: 10px;
+        padding: nth($pd, 2);
+        &:hover {
+            background-color: $list-hover;
+        }
     }
+   }
 }
 %h {
     color: $heading-color;
@@ -55,7 +55,7 @@ ul {
     padding-top: nth($pd, 3);
     margin-left: nth($pd, 3)+5;
 }
-@each $key, $value in $size-headings {
+@each $key, $value in $size-headings { /* @each rule */
     #{$key} {
         @extend %h;
         font-size: $value;
@@ -127,9 +127,12 @@ $color-btns: (
     participate: $darkblue
 );
 @each $name, $value in $color-btns {
-    .btn-#{$name} {
+    .btn-#{$name}{
         @extend %btn;
         background-color: $value;
+        &:hover {
+            background-color: transparentize($value, .3);
+        }
     }
 }
 /*        CODE for responsive video    */

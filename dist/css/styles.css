@@ -42,10 +42,6 @@ ul {
   margin: 12px;
 }
 
-ul.facts {
-  margin: 0;
-}
-
 ul li {
   list-style-type: none;
   margin: 5px;
@@ -56,12 +52,16 @@ section ul li::before {
   padding: 10px;
 }
 
-.facts li {
+ul.facts {
+  margin: 0;
+}
+
+ul.facts li {
   border-radius: 10px;
   padding: 10px;
 }
 
-.facts li:hover {
+ul.facts li:hover {
   background-color: lightyellow;
 }
 
@@ -72,14 +72,17 @@ h1, h2, h3 {
   margin-left: 17px;
 }
 
+/* @each rule */
 h1 {
   font-size: 2.4rem;
 }
 
+/* @each rule */
 h2 {
   font-size: 2.2rem;
 }
 
+/* @each rule */
 h3 {
   font-size: 1.8rem;
 }
@@ -174,12 +177,24 @@ main {
   background-color: darkgreen;
 }
 
+.btn-difference:hover {
+  background-color: rgba(0, 100, 0, 0.7);
+}
+
 .btn-involved {
   background-color: darkred;
 }
 
+.btn-involved:hover {
+  background-color: rgba(139, 0, 0, 0.7);
+}
+
 .btn-participate {
   background-color: #1A64A8;
+}
+
+.btn-participate:hover {
+  background-color: rgba(26, 100, 168, 0.7);
 }
 
 /*        CODE for responsive video    */
@@ -223,7 +238,8 @@ nav ul li a:active {
 }
 
 nav ul li:hover {
-  background-color: #e13801;
+  background-color: rgba(225, 56, 1, 0.8);
+  /* bult-in module Color function */
 }
 
 nav ul li:hover:first-of-type {

@@ -1,6 +1,9 @@
 @charset "UTF-8";
 /*! made by Volha Molash */
 @import url("https://fonts.googleapis.com/css?family=Courgette|Kaushan+Script&display=swap");
+/* variable */
+/* list property */
+/* map */
 * {
   margin: 0;
   padding: 0;
@@ -77,18 +80,21 @@ h1, h2, h3 {
   margin-left: 17px;
 }
 
-/* @each rule */
+/* 'Flow Content' item: @each rule */
 h1 {
+  /* extend style */
   font-size: 2.4rem;
 }
 
-/* @each rule */
+/* 'Flow Content' item: @each rule */
 h2 {
+  /* extend style */
   font-size: 2.2rem;
 }
 
-/* @each rule */
+/* 'Flow Content' item: @each rule */
 h3 {
+  /* extend style */
   font-size: 1.8rem;
 }
 
@@ -109,6 +115,8 @@ figure.art {
 figure figcaption {
   padding: 0 15px;
   text-align: center;
+  font-size: 1.2rem;
+  /* built-in module: map-get function */
 }
 
 @media (min-width: 650px) {
@@ -163,6 +171,7 @@ main aside a:active {
     /* color function */
   }
   main aside p {
+    /* 3 level nesting */
     padding-left: 17px;
   }
 }
@@ -255,7 +264,7 @@ nav ul li a:active {
 
 nav ul li:hover {
   background-color: rgba(225, 56, 1, 0.8);
-  /* bult-in module Color function */
+  /* bult-in module: Color function */
 }
 
 nav ul li:hover:first-of-type {

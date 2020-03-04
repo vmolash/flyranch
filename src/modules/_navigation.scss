@@ -9,8 +9,7 @@ nav {
             border-radius: 5px;
             @include linx($nav-color, $heading-color, $red);
             &:hover {
-                background-color: transparentize(lighten($background-hover, 4%), .2); /* bult-in module Color function */
-
+                background-color: transparentize(lighten($background-hover, 4%), .2); /* bult-in module: Color function */
                 &:first-of-type {
                     background-color: transparent;
                 }

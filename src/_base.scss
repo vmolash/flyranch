@@ -5,7 +5,6 @@
     font-size: 10px;
 }
 .container {
-    
     font-family: $font-body;
     margin: 0 auto;
     max-width: 960px;
@@ -44,7 +43,7 @@ ul {
         padding: nth($pd, 2);
         }
     }
-   &.facts {
+    &.facts {
        margin: 0;
         li {
         border-radius: 10px;
@@ -61,9 +60,9 @@ ul {
     padding-top: nth($pd, 3);
     margin-left: nth($pd, 3)+5;
 }
-@each $key, $value in $size-headings { /* @each rule */
+@each $key, $value in $size-headings { /* 'Flow Content' item: @each rule */
     #{$key} {
-        @extend %h;
+        @extend %h; /* extend style */
         font-size: $value;
     }
 }
@@ -83,6 +82,7 @@ figure {
     figcaption {
         padding: 0 15px;
         text-align: center;
+        font-size: map-get($size-headings , h3) - 0.6; /* built-in module: map-get function */
         @include break (650px) {
             text-align: right;
         }
@@ -112,7 +112,7 @@ main {
             h2, h3 {
                 color: lighten($heading-color, 12%); /* color function */
             }
-            p {
+            p { /* 3 level nesting */
                 padding-left: nth($pd, 4) + 2;
             }
         }
@@ -120,14 +120,14 @@ main {
 }
 %btn {
     display: inline-block;
-    padding: 6px 12px;
+    padding: nth($pd, 3)/2 nth($pd, 3);
     margin: nth($pd, 1);
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
     cursor: pointer;
     border: none;
-    border-radius: 12px;
+    border-radius: nth($pd, 3);
     font-family: $font-body;
     user-select: none;
     color: $body-background;
@@ -151,10 +151,10 @@ $color-btns: (
     margin-bottom: nth($pd, 5);
     position: relative;
     padding-bottom: 315/560*100%; /* math operator */
-    padding-top: 25px;
+    padding-top: nth($pd, 5) + 5;
     height: 0;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: nth($pd, 2);
     iframe {
         position: absolute;
         top: 0;

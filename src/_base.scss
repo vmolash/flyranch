@@ -9,16 +9,10 @@
     margin: 0 auto;
     max-width: 960px;
     line-height: 1.55;
-    %fz {
-        font-size: $size-text;
-    }
-    @include break(800px) {
-        box-shadow: 0px 3px 8px 3px $shadow;
-    }
+    %fz { font-size: $size-text; }
+    @include break(800px) { box-shadow: 0px 3px 8px 3px $shadow; }
 }
-%bar{
-    background-color: $nav-background;
-}
+%bar{ background-color: $nav-background; }
 footer {
     @extend %bar;
     text-align: center;
@@ -48,10 +42,8 @@ ul {
         li {
         border-radius: 10px;
         padding: nth($pd, 2);
-        &:hover {
-            background-color: $list-hover;
+        &:hover { background-color: $list-hover; }
         }
-    }
    }
 }
 %h {
@@ -60,9 +52,9 @@ ul {
     padding-top: nth($pd, 3);
     margin-left: nth($pd, 3)+5;
 }
-@each $key, $value in $size-headings { /* 'Flow Content' item: @each rule */
+@each $key, $value in $size-headings { // 'Flow Content' item: @each rule
     #{$key} {
-        @extend %h; /* extend style */
+        @extend %h; // extend style
         font-size: $value;
     }
 }
@@ -73,19 +65,16 @@ img {
 }
 figure {
     margin: 15px 0;
+    text-align: center;
     // @include break(650px) {
     //     margin-right: -3.45%;
     // }
-    &.art {
-        margin-top: 0;
-    }
+    &.art { margin-top: 0; }
     figcaption {
         padding: 0 15px;
-        text-align: center;
-        font-size: map-get($size-headings , h3) - 0.6; /* built-in module: map-get function */
-        @include break (650px) {
-            text-align: right;
-        }
+        font-size: map-get($size-headings , h3) - 0.6; // built-in function: map-get
+        color: $figcapt;
+        @include break (650px) { text-align: right; }
     }
 }
 a {
@@ -94,27 +83,19 @@ a {
 }
 main {
     padding: 0 2%;
-    aside {
-        @include linx($aside-color,lighten($green, 15%),$red);
-    }
+    aside { @include linx($aside-color,lighten($green, 15%),$red); }
     @include break (650px) {
         padding-right: 0;
-        display: grid; /* grid system */
-        grid-template-columns: 600/960*100% 100-(600/960*100%); /* math operators */
-        section {
-            padding-right: 3.45%;
-        }
+        display: grid; // grid system
+        grid-template-columns: 600/960*100% 100-(600/960*100%); // math operators
+        section { padding-right: 3.45%; }
         aside {
             background-color: $background-aside;
             background: linear-gradient(90deg, $background-aside 0%, $nav-color 70%);
             padding-left: nth($pd, 4);
             padding-right: 5.5%;
-            h2, h3 {
-                color: lighten($heading-color, 12%); /* color function */
-            }
-            p { /* 3 level nesting */
-                padding-left: nth($pd, 4) + 2;
-            }
+            h2, h3 { color: lighten($heading-color, 12%);}  // color function
+            p { padding-left: nth($pd, 4) + 2; } // 3 level nesting
         }
     }
 }
@@ -141,16 +122,14 @@ $color-btns: (
     .btn-#{$name}{
         @extend %btn;
         background-color: $value;
-        &:hover {
-            background-color: transparentize($value, .25); /* Color modifier */
-        }
+        &:hover { background-color: transparentize($value, .25); } // Color modifier
     }
 }
 /*        CODE for responsive video    */
 .video {
     margin-bottom: nth($pd, 5);
     position: relative;
-    padding-bottom: 315/560*100%; /* math operator */
+    padding-bottom: 315/560*100%; // math operator
     padding-top: nth($pd, 5) + 5;
     height: 0;
     overflow: hidden;
@@ -164,3 +143,43 @@ $color-btns: (
     }
 }
 /*        end CODE for video           */
+.grid {
+    margin-bottom: 15px;
+    @include clearfix;
+    .item {
+        float: left;
+        @include imageGrid(3, 2%);
+        @include break(650px) { @include imageGrid(2, 2%); }
+    }
+    img {
+        display: block;
+        border-radius: nth($roundness,1);
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+
+#wrapper {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-auto-rows: 75px;
+    grid-auto-flow: dense;
+    margin-bottom: 10px;
+}
+#wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.horiz {
+    grid-column: span 2;
+}
+.vert {
+    grid-row: span 2;
+}
+.big {
+    grid-column: span 2;
+    grid-row: span 2;
+}

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Courgette|Kaushan+Script&display=swap');
 
-$body-background:   #fefffa; /* variable */
+$body-background:   #fefffa; // variable
 $text-color:        #333;
 $heading-color:     #2c5573;
 // $links:             #1A64A8;
@@ -14,9 +14,11 @@ $aside-color:       #625d53;
 $background-hover:  #cd3301;
 $shadow:            #ddd;
 $background-aside:  #ededed;
+$figcapt:           #666;
 
 
-$pd: 5px 10px 12px 15px 20px; /* list property */
+$pd: 5px 10px 12px 15px 20px; // list property
+$roundness: 10px 0 20px 0;
 
 $font-body: Verdana, sans-serif;
 $font-headings: 'Courgette', sans-serif;
@@ -25,4 +27,4 @@ $size-headings: (
     h1: 2.4rem,
     h2: 2.2rem,
     h3: 1.8rem
-); /* map */
+); // map

@@ -1,10 +1,12 @@
 /*! made by Volha Molash */
 @import "variables";
-// @import "normalize";
+@import "normalize";
 @import "mixins";
 @import "base";
 
 @import "modules/navigation";
+@import "modules/media";
+@import "modules/interface";
 
 
 

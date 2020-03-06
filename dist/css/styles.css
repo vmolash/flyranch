@@ -685,7 +685,6 @@ figure figcaption {
   }
 }
 
-/*        CODE for responsive video    */
 .video {
   margin-bottom: 20px;
   position: relative;
@@ -704,7 +703,6 @@ figure figcaption {
   height: 100%;
 }
 
-/*        end CODE for video           */
 .btn-difference, .btn-involved, .btn-participate {
   display: inline-block;
   padding: 6px 12px;

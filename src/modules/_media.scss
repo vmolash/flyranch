@@ -30,7 +30,6 @@ figure {
         }
     }
 }
-$gridColRow: span 2;
 #wrapper {
     display: grid;
     grid-gap: nth($pd, 1);
@@ -46,7 +45,6 @@ $gridColRow: span 2;
     .vert, .big { grid-row: $gridColRow; }
     .special { @include break(542px, 649px) { grid-column: $gridColRow; } }
 }
-/*        CODE for responsive video    */
 .video {
     margin-bottom: nth($pd, 5);
     position: relative;
@@ -62,4 +60,3 @@ $gridColRow: span 2;
         @include heightWidth;
     }
 }
-/*        end CODE for video           */

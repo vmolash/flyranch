@@ -11,12 +11,12 @@ function css () {
             .pipe(cleanCSS())
             .pipe(rename({ extname: '.min.css' }))
             .pipe(dest('dist/css'))
-
 };
 
 exports.default = function () {
     watch('src/*.scss', css);
     watch('src/modules/*.scss', css);
+    watch()
 }
 
 // exports.default = css;

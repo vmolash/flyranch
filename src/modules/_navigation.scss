@@ -1,3 +1,4 @@
+// top bar menu
 nav {
     ul{
         @include break(0, 630px) { .logo { display: none; } }
@@ -57,10 +58,7 @@ header {
         text-indent: -999em;
         height: 44px;
         cursor: pointer;
-        
-        -webkit-user-select: none; /*Chrome all / Safari all */
-        -moz-user-select: none; /*Firefox all */
-        -ms-user-select: none; /* IE 10+ */
+       @include browsers;
         user-select: none;
         position: relative;
         top: 2px;

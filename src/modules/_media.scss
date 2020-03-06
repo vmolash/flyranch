@@ -1,0 +1,65 @@
+// images, video
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: nth($pd, 2);
+}
+figure {
+    margin: 15px 0;
+    text-align: center;
+    &.art { margin-top: 0; }
+    figcaption {
+        padding: 0 15px;
+        font-size: map-get($size-headings , h3) - 0.6; // built-in function: map-get
+        color: $figcapt;
+        @include break (650px) { text-align: right; }
+    }
+}
+.float { // nested 3 level
+    margin-bottom: nth($pd, 4);
+    @include clearfix;
+    .item {
+        float: left;
+        @include imageFloat(3, 2%);
+        @include break(650px) { @include imageFloat(2, 2%); }
+        img {
+            display: block;
+            border-radius: nth($roundness,1);
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}
+$gridColRow: span 2;
+#wrapper {
+    display: grid;
+    grid-gap: nth($pd, 1);
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-auto-rows: nth($pd, 1)+70;
+    grid-auto-flow: dense;
+    margin-bottom: nth($pd, 2);
+    img {
+        @include heightWidth;
+        object-fit: cover;
+    }
+    .horiz, .big { grid-column: $gridColRow; }
+    .vert, .big { grid-row: $gridColRow; }
+    .special { @include break(542px, 649px) { grid-column: $gridColRow; } }
+}
+/*        CODE for responsive video    */
+.video {
+    margin-bottom: nth($pd, 5);
+    position: relative;
+    padding-bottom: 315/560*100%; // math operator
+    padding-top: nth($pd, 5) + 5;
+    height: 0;
+    overflow: hidden;
+    border-radius: nth($pd, 2);
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include heightWidth;
+    }
+}
+/*        end CODE for video           */

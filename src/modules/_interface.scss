@@ -1,0 +1,27 @@
+// Buttons
+%btn {
+    display: inline-block;
+    padding: nth($pd, 3)/2 nth($pd, 3);
+    margin: nth($pd, 1);
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: none;
+    border-radius: nth($pd, 3);
+    font-family: $font-body;
+    user-select: none;
+    color: $body-background;
+}
+$color-btns: (
+    difference: $green,
+    involved: $red,
+    participate: $darkblue
+);
+@each $name, $value in $color-btns {
+    .btn-#{$name}{
+        @extend %btn;
+        background-color: $value;
+        &:hover { background-color: transparentize($value, .25); } // Color modifier
+    }
+}

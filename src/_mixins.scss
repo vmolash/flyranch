@@ -30,7 +30,7 @@
       clear: both;
   }
 }
-@mixin imageGrid($qty, $margin) {
+@mixin imageFloat($qty, $margin) {
   width: ((100% - (($qty - 1) * $margin)) / $qty);
   &:nth-child(n) {
       margin-bottom: $margin;
@@ -40,4 +40,13 @@
       margin-bottom: 0;
       margin-right: 0;
   }
+}
+@mixin browsers {
+  -webkit-user-select: none; /*Chrome all / Safari all */
+  -moz-user-select: none; /*Firefox all */
+  -ms-user-select: none; /* IE 10+ */
+}
+@mixin heightWidth {
+  width: 100%;
+  height: 100%;
 }

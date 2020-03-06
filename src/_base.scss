@@ -34,13 +34,13 @@ ul {
     margin: nth($pd, 1);
     section &::before {
         content: '✓';
-        padding: nth($pd, 2);
+        padding: nth($roundness, 1);
         }
     }
     &.facts {
        margin: 0;
         li {
-        border-radius: 10px;
+        border-radius: nth($roundness, 1);
         padding: nth($pd, 2);
         &:hover { background-color: $list-hover; }
         }
@@ -56,25 +56,6 @@ ul {
     #{$key} {
         @extend %h; // extend style
         font-size: $value;
-    }
-}
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-figure {
-    margin: 15px 0;
-    text-align: center;
-    // @include break(650px) {
-    //     margin-right: -3.45%;
-    // }
-    &.art { margin-top: 0; }
-    figcaption {
-        padding: 0 15px;
-        font-size: map-get($size-headings , h3) - 0.6; // built-in function: map-get
-        color: $figcapt;
-        @include break (650px) { text-align: right; }
     }
 }
 a {
@@ -98,88 +79,4 @@ main {
             p { padding-left: nth($pd, 4) + 2; } // 3 level nesting
         }
     }
-}
-%btn {
-    display: inline-block;
-    padding: nth($pd, 3)/2 nth($pd, 3);
-    margin: nth($pd, 1);
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    cursor: pointer;
-    border: none;
-    border-radius: nth($pd, 3);
-    font-family: $font-body;
-    user-select: none;
-    color: $body-background;
-}
-$color-btns: (
-    difference: $green,
-    involved: $red,
-    participate: $darkblue
-);
-@each $name, $value in $color-btns {
-    .btn-#{$name}{
-        @extend %btn;
-        background-color: $value;
-        &:hover { background-color: transparentize($value, .25); } // Color modifier
-    }
-}
-/*        CODE for responsive video    */
-.video {
-    margin-bottom: nth($pd, 5);
-    position: relative;
-    padding-bottom: 315/560*100%; // math operator
-    padding-top: nth($pd, 5) + 5;
-    height: 0;
-    overflow: hidden;
-    border-radius: nth($pd, 2);
-    iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-}
-/*        end CODE for video           */
-.grid {
-    margin-bottom: 15px;
-    @include clearfix;
-    .item {
-        float: left;
-        @include imageGrid(3, 2%);
-        @include break(650px) { @include imageGrid(2, 2%); }
-    }
-    img {
-        display: block;
-        border-radius: nth($roundness,1);
-        max-width: 100%;
-        height: auto;
-    }
-}
-
-
-#wrapper {
-    display: grid;
-    grid-gap: 5px;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    grid-auto-rows: 75px;
-    grid-auto-flow: dense;
-    margin-bottom: 10px;
-}
-#wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.horiz {
-    grid-column: span 2;
-}
-.vert {
-    grid-row: span 2;
-}
-.big {
-    grid-column: span 2;
-    grid-row: span 2;
 }

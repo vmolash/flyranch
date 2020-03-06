@@ -10,7 +10,7 @@
   }
 }
 @mixin break($args...) {
-  @if length($args) == 1 {
+  @if length($args) == 1 { // if/else 
     @media (min-width: nth($args, 1)) {
       @content;
     }

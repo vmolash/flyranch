@@ -76,7 +76,7 @@ main {
             padding-left: nth($pd, 4);
             padding-right: 5.5%;
             h2, h3 { color: lighten($heading-color, 12%);}  // color function
-            p { padding-left: nth($pd, 4) + 2; } // 3 level nesting
+            p { padding-left: nth($pd, 4) + 2; }
         }
     }
 }

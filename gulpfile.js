@@ -11,7 +11,6 @@ function css () {
             .pipe(cleanCSS())
             .pipe(rename({ extname: '.min.css' }))
             .pipe(dest('dist/css'))
-
 };
 
 exports.default = function () {

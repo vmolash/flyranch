@@ -1,4 +1,4 @@
-@mixin linx ($link, $hover, $active) { /* custom mixin */
+@mixin linx ($link, $hover, $active) { // custom mixin
   a {
     color: $link;
     &:hover {
@@ -10,7 +10,7 @@
   }
 }
 @mixin break($args...) {
-  @if length($args) == 1 {
+  @if length($args) == 1 { // if/else 
     @media (min-width: nth($args, 1)) {
       @content;
     }

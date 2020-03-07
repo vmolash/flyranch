@@ -341,6 +341,7 @@ template {
 }
 
 * {
+  border: 0;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -436,10 +437,6 @@ main {
   padding: 0 2%;
 }
 
-main aside {
-  /* custom mixin */
-}
-
 main aside a {
   color: #625d53;
 }
@@ -475,76 +472,6 @@ main aside a:active {
   }
 }
 
-@media (min-width: 0) and (max-width: 630px) {
-  nav ul .logo {
-    display: none;
-  }
-}
-
-nav ul li {
-  border-radius: 5px;
-  /* custom mixin */
-}
-
-nav ul li a {
-  color: #fff;
-}
-
-nav ul li a:hover {
-  color: #2c5573;
-}
-
-nav ul li a:active {
-  color: darkred;
-}
-
-nav ul li:hover {
-  background-color: rgba(225, 56, 1, 0.8);
-}
-
-nav ul li:hover:first-of-type {
-  background-color: transparent;
-}
-
-nav ul li a {
-  font-weight: bold;
-  display: block;
-  padding: 12px 10px;
-  text-transform: uppercase;
-}
-
-@media (min-width: 500px) {
-  nav ul {
-    display: flex;
-    justify-content: center;
-  }
-  nav ul li:first-of-type {
-    margin-right: auto;
-  }
-  nav ul li a {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    width: 100px;
-    height: 56px;
-  }
-  nav ul li a.logo {
-    padding: 0;
-  }
-}
-
-header nav {
-  height: 0;
-  overflow: hidden;
-}
-
-@media (min-width: 500px) {
-  header nav {
-    height: 100%;
-    overflow: visible;
-  }
-}
-
 header input[type=checkbox] {
   position: absolute;
   top: -999em;
@@ -577,6 +504,75 @@ header label {
 @media (min-width: 500px) {
   header label {
     display: none;
+  }
+}
+
+header nav {
+  height: 0;
+  overflow: hidden;
+}
+
+@media (min-width: 500px) {
+  header nav {
+    height: 100%;
+    overflow: visible;
+  }
+}
+
+@media (min-width: 0) and (max-width: 630px) {
+  header nav ul .logo {
+    display: none;
+  }
+}
+
+header nav ul li {
+  border-radius: 5px;
+}
+
+header nav ul li a {
+  color: #fff;
+}
+
+header nav ul li a:hover {
+  color: #2c5573;
+}
+
+header nav ul li a:active {
+  color: darkred;
+}
+
+header nav ul li:hover {
+  background-color: rgba(225, 56, 1, 0.8);
+}
+
+header nav ul li:hover:first-of-type {
+  background-color: transparent;
+}
+
+header nav ul li a {
+  font-weight: bold;
+  display: block;
+  padding: 12px 10px;
+  text-transform: uppercase;
+}
+
+@media (min-width: 500px) {
+  header nav ul {
+    display: flex;
+    justify-content: center;
+  }
+  header nav ul li:first-of-type {
+    margin-right: auto;
+  }
+  header nav ul li a {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 56px;
+  }
+  header nav ul li a.logo {
+    padding: 0;
   }
 }
 
@@ -685,7 +681,6 @@ figure figcaption {
   }
 }
 
-/*        CODE for responsive video    */
 .video {
   margin-bottom: 20px;
   position: relative;
@@ -704,7 +699,26 @@ figure figcaption {
   height: 100%;
 }
 
-/*        end CODE for video           */
+.horiz:hover img {
+  border: solid 3px;
+  border-color: lightpink;
+}
+
+.vert:hover img {
+  border: solid 3px;
+  border-color: lightseagreen;
+}
+
+.big:hover img {
+  border: solid 3px;
+  border-color: yellow;
+}
+
+.small:hover img {
+  border: solid 3px;
+  border-color: lightskyblue;
+}
+
 .btn-difference, .btn-involved, .btn-participate {
   display: inline-block;
   padding: 6px 12px;

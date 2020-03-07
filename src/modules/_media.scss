@@ -4,7 +4,7 @@ img {
     height: auto;
     border-radius: nth($pd, 2);
 }
-figure {
+figure { // nested 2 level
     margin: 15px 0;
     text-align: center;
     &.art { margin-top: 0; }
